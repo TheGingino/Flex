@@ -1,0 +1,214 @@
+*, *::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62,5%; /* 1rem= 10px */    
+}
+
+body{
+    min-height: 100vh;
+    background: #0f98dc;
+    overflow: hidden;
+}
+
+.cookiemonster{
+    width: 100rem;
+    height: 100rem;
+    position: relative;
+    transform: scale(0.6);
+}
+
+.cookiemonster_eye{
+    height: 30rem;
+    width: 30rem;
+    background: white;
+    border-radius: 50%;
+    border: 0.7rem solid black;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    box-shadow: inset 0 0 4rem 0 rgb(0, 0, 0, 0.4);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cookiemonster_eye--left{
+    left: 35%;
+    
+}
+
+.cookiemonster_eye--right{
+    left: calc(35% + 30rem);
+}
+
+.cookiemonster_innereye{
+    width: 40%;
+    height: 40%;
+    background: black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.cookiemonster_eye--left > .cookiemonster_innereye{
+    left: 70%;
+    top: 60%;
+}
+
+.cookiemonster_eye--right > .cookiemonster_innereye{
+    left: 34%;
+    top: 40%;
+}
+
+.cookiemonster_mouth{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    background: black;
+    height: 60em;
+    width: 60rem;
+    transform: translate(-50%,-50%);
+    -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+    border-radius: 50%;
+}
+
+.cookiemonster_mouthcircle{
+    position: absolute;
+    height: 30rem;
+    width: 20rem;
+    background: #0f98dc;
+    top: 30%;
+    left: 16%;
+    border-radius: 50%;
+    transform: rotate(10deg);
+}
+
+.cookiemonster_mouthcircle--second{
+    left: calc(16% + 10rem);
+}
+
+.cookiemonster_mouthcircle--third{
+    left: calc(16% + 20rem);
+}
+
+.cookiemonster_mouthcircle--forth{
+    left: calc(16% + 30rem);
+}
+
+.cookiemonster_mouthcircle--fifth{
+    left: calc(16% + 40rem);
+}
+
+.cookiemonster_mouthcircle--sixth{
+    left: calc(16% + 50rem);
+}
+
+.cookiemonster_mouthend{
+    position: absolute;
+    height: 25rem;
+    width: 25rem;
+    top:  36%;
+    z-index: 1;
+    border-radius: 50%;
+    border: 1rem solid transparent ;
+    border-bottom: 1rem solid black;
+}
+
+.cookiemonster_mouthend--left{
+    left: 10%;
+    transform: rotate(35deg);
+}
+
+.cookiemonster_mouthend--right{
+    right: 10%;
+    transform: rotate(-35deg);
+}
+
+.cookiemonster_mouthend::after{
+    content:"";
+    width: 70%;
+    height: 60%;
+    position: absolute;
+    border-radius: 50%;
+    border: 1rem solid transparent;
+    border-bottom: 1rem solid black;
+}
+
+.cookiemonster_mouthend--left::after{
+    top: 70%;
+    transform: rotate(125deg);
+}
+
+.cookiemonster_mouthend--right::after{
+    transform: rotate(-125deg);
+    left: 30%;
+    bottom: -30%; /*of -29%*/
+} 
+
+.cookie{
+    height: 20rem;
+    width: 20rem;
+    background: #ebbd5b;
+    border-radius: 50%;
+    border: 0.5rem solid black;
+    position: absolute;
+    bottom: 50%;
+    right: 20%;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+}
+
+.cookie:hover{
+    cursor: pointer;
+}
+
+.cookie_spot{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background: black;
+}
+
+.cookie_spot--first{
+    top: 25%;
+    left: 20%;
+}
+
+.cookie_spot--second{
+    top: 30%;
+    right: 20%;
+}
+
+.cookie_spot--third{
+    bottom: 15%;
+    right: 50%;
+}
+
+.cookie_spot--forth{
+    bottom: 10%;
+    right: 5%;
+}
+
+.u-display-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 75rem){
+    .cookie{
+        display: none  ;
+    }
+    .cookiemonster{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.35);
+
+    }
+}
